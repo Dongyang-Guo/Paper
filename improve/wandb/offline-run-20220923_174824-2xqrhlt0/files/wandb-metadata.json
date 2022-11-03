@@ -1,0 +1,18 @@
+{
+    "os": "Windows-10-10.0.22000-SP0",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-09-23T09:48:26.712505",
+    "startedAt": "2022-09-23T09:48:24.885475",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 1,
+    "cpu_count": 20,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "E:/4000/YOLOv6-main/dabao/\u53ef\u590d\u73b0final\u672a\u5168\u7248\u672c/train.py",
+    "codePath": "train.py",
+    "host": "CHINAMI-HTEOEVA",
+    "username": "Administrator",
+    "executable": "D:\\conda\\envs\\tptyolo\\python.exe"
+}

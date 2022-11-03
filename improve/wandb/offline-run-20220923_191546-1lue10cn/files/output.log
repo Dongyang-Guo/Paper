@@ -1,0 +1,147 @@
+Plotting labels...
+[34m[1mautoanchor: [39m[22mAnalyzing anchors... anchors/target = 9.12, Best Possible Recall (BPR) = 0.9878
+                 all        609       4387   0.000869     0.0483   0.000594   0.000152
+Overriding model.yaml nc=10 with nc=4
+                 from  n    params  module                                  arguments
+  0                -1  1      8800  models.common.Conv                      [3, 80, 6, 2, 2]
+  1                -1  1    115520  models.common.Conv                      [80, 160, 3, 2]
+  2                -1  4    309120  models.common.C3                        [160, 160, 160, 4]
+  3                -1  1    461440  models.common.Conv                      [160, 320, 3, 2]
+  4                -1  8   2259200  models.common.C3                        [320, 320, 320, 8]
+  5                -1  1   1844480  models.common.Conv                      [320, 640, 3, 2]
+  6                -1 12  13125120  models.common.C3                        [640, 640, 640, 12]
+  7                -1  1   7375360  models.common.Conv                      [640, 1280, 3, 2]
+  8                -1  4  28288640  models.common.C3TR                      [1280, 1280, 4]
+  9                -1  1   9015040  models.common.SPPSCEP                   [1280, 1280]
+ 10                -1  1    820480  models.common.Conv                      [1280, 640, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  4   5332480  models.common.C3                        [1280, 640, 640, 4, False]
+ 14                -1  1    205440  models.common.Conv                      [640, 320, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  4   1335040  models.common.C3                        [640, 320, 320, 4, False]
+ 18                -1  1     51520  models.common.Conv                      [320, 160, 1, 1]
+ 19                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 20           [-1, 2]  1         0  models.common.Concat                    [1]
+ 21                -1  1    154240  models.common.SPP                       [320, 160, [5, 9, 13]]
+ 22                -1  4    309120  models.common.C3                        [160, 160, 160, 4, False]
+ 23                -1  1      3298  models.common.CBAM                      [160, 160]
+ 24                -1  1    230720  models.common.Conv                      [160, 160, 3, 2]
+ 25       [-1, 18, 4]  1         0  models.common.Concat                    [1]
+ 26                -1  1    615680  models.common.SPP                       [640, 320, [5, 9, 13]]
+ 27                -1  4   1232640  models.common.C3                        [320, 320, 320, 4, False]
+ 28                -1  1     12898  models.common.CBAM                      [320, 320]
+ 29                -1  1    922240  models.common.Conv                      [320, 320, 3, 2]
+ 30       [-1, 14, 6]  1         0  models.common.Concat                    [1]
+ 31                -1  1   2460160  models.common.SPP                       [1280, 640, [3, 7, 11]]
+ 32                -1  4   4922880  models.common.C3                        [640, 640, 640, 4, False]
+ 33                -1  1     51298  models.common.CBAM                      [640, 640]
+ 34                -1  1   3687680  models.common.Conv                      [640, 640, 3, 2]
+ 35          [-1, 10]  1         0  models.common.Concat                    [1]
+ 36                -1  1   4099840  models.common.SPP                       [1280, 1280, [3, 5, 7]]
+ 37                -1  4  28288640  models.common.C3TR                      [1280, 1280, 4, False]
+ 38                -1  1    204898  models.common.CBAM                      [1280, 1280]
+ 39      [22, 28, 32]  1     40428  models.yolo.Detect                      [4, [[7, 9, 9, 17, 17, 15, 13, 27], [21, 28, 36, 18, 23, 47, 35, 33], [58, 29, 43, 60, 82, 46, 66, 88]], [160, 320, 640]]
+Model Summary: 809 layers, 117784340 parameters, 117784340 gradients
+Transferred 547/964 items from yolov5x.pt
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 139 weight, 223 weight (no decay), 168 bias
+[34m[1malbumentations: [39m[22mBlur(always_apply=False, p=0.01, blur_limit=(3, 7)), MedianBlur(always_apply=False, p=0.01, blur_limit=(3, 7)), ToGray(always_apply=False, p=0.01), CLAHE(always_apply=False, p=0.01, clip_limit=(1, 4.0), tile_grid_size=(8, 8))
+[34m[1mtrain: [39m[22mScanning 'train.cache' images and labels... 468 found, 0 missing, 0 empty, 1 corrupted: 100%|██████████| 468/468 [00:00<?, ?it/s]
+[34m[1mtrain: [39m[22mWARNING: Ignoring corrupted image and/or label red1\\images\\000606.jpg: negative labels
+[34m[1mval: [39m[22mScanning 'val.cache' images and labels... 620 found, 0 missing, 0 empty, 1 corrupted: 100%|██████████| 620/620 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mWARNING: Ignoring corrupted image and/or label red1\\images\\000472.jpg: negative labels
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1mruns\train\exp3
+Starting training for 100 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+      0/99     14.3G    0.1031   0.03429   0.04313        42       640: 100%|██████████| 59/59 [00:31<00:00,  1.88it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/39 [00:00<?, ?it/s]D:\conda\envs\tptyolo\lib\site-packages\torch\functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ..\aten\src\ATen\native\TensorShape.cpp:2157.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 39/39 [00:09<00:00,  4.08it/s]
+wandb: Network error (ConnectionError), entering retry loop.
+Traceback (most recent call last):
+  File "E:/4000/YOLOv6-main/dabao/可复现final未全版本/train.py", line 681, in <module>
+    main(opt)
+  File "E:/4000/YOLOv6-main/dabao/可复现final未全版本/train.py", line 578, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "E:/4000/YOLOv6-main/dabao/可复现final未全版本/train.py", line 419, in train
+    callbacks.run('on_fit_epoch_end', log_vals, epoch, best_fitness, fi)
+  File "E:\4000\YOLOv6-main\dabao\可复现final未全版本\utils\callbacks.py", line 76, in run
+    logger['callback'](*args, **kwargs)
+  File "E:\4000\YOLOv6-main\dabao\可复现final未全版本\utils\loggers\__init__.py", line 119, in on_fit_epoch_end
+    self.wandb.end_epoch(best_result=best_fitness == fi)
+  File "E:\4000\YOLOv6-main\dabao\可复现final未全版本\utils\loggers\wandb\wandb_utils.py", line 493, in end_epoch
+    wandb.log(self.log_dict)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\wandb_run.py", line 256, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\wandb_run.py", line 222, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\wandb_run.py", line 1548, in log
+    self._log(data=data, step=step, commit=commit)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\wandb_run.py", line 1339, in _log
+    self._partial_history_callback(data, step, commit)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\wandb_run.py", line 1233, in _partial_history_callback
+    publish_step=not_using_tensorboard,
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\interface\interface.py", line 541, in publish_partial_history
+    data = history_dict_to_json(run, data, step=user_step, ignore_copy_err=True)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\data_types\utils.py", line 55, in history_dict_to_json
+    run, key, val, namespace=step, ignore_copy_err=ignore_copy_err
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\data_types\utils.py", line 97, in val_to_json
+    if _server_accepts_image_filenames():
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\data_types\image.py", line 37, in _server_accepts_image_filenames
+    max_cli_version = util._get_max_cli_version()
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\util.py", line 1673, in _get_max_cli_version
+    max_cli_version = wandb.api.max_cli_version()
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\apis\internal.py", line 58, in max_cli_version
+    return self.api.max_cli_version()
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\apis\normalize.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\internal\internal_api.py", line 397, in max_cli_version
+    _, server_info = self.viewer_server_info()
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\apis\normalize.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\internal\internal_api.py", line 454, in viewer_server_info
+    res = self.gql(query)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\lib\retry.py", line 102, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\sdk\internal\internal_api.py", line 140, in execute
+    return self.client.execute(*args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\transport\requests.py", line 38, in execute
+    request = requests.post(self.url, **post_args)
+  File "D:\conda\envs\tptyolo\lib\site-packages\requests\api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\conda\envs\tptyolo\lib\site-packages\requests\adapters.py", line 450, in send
+    timeout=timeout
+  File "D:\conda\envs\tptyolo\lib\site-packages\urllib3\connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "D:\conda\envs\tptyolo\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\conda\envs\tptyolo\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\conda\envs\tptyolo\lib\http\client.py", line 1373, in getresponse
+    response.begin()
+  File "D:\conda\envs\tptyolo\lib\http\client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "D:\conda\envs\tptyolo\lib\http\client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "D:\conda\envs\tptyolo\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "D:\conda\envs\tptyolo\lib\ssl.py", line 1071, in recv_into
+    return self.read(nbytes, buffer)
+  File "D:\conda\envs\tptyolo\lib\ssl.py", line 929, in read
+    return self._sslobj.read(len, buffer)
+KeyboardInterrupt
